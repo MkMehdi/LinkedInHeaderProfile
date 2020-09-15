@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">Elmehdi Mellouk | Linkedin</string>
+    <string name="profile_name">Elmehdi Mellouk</string>
+    <string name="function_name">Android Developer@Kotlin</string>
+    <string name="title_about">About</string>
+    <string name="desc_about">"Android developer specialist with more than 5 years of engineering experience broad range of industries, including POS solutions. Solid understanding of mobile and software development life cycles.\n" +
+                            "Dedicated to continuously developing, implementing, and adopting new technologies to maximize development efficiency and produce innovative applications.\n" +
+                            "\n" +
+                            "• Created high-quality Android Apps and server-side integrations.\n" +
+                            "• Ensure applications are properly integrated with Android API’s.\n" +
+                            "• Ensured content met or exceeded business and client requirements.\n" +
+                            "• Wrote clean, clear, efficient, and maintainable code.\n" +
+                            "• Proficient in design, data structures, problem-solving, and debugging.\n" +
+                            "• The interaction between various devices and versions of Android.\n" +
+                            "\n" +
+                            "I enjoy the challenge of creating new software and get know every new technology. "</string>
+</resources>
