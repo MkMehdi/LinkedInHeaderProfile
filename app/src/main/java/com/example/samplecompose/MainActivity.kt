@@ -2,12 +2,15 @@ package com.example.samplecompose
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.ScrollableColumn
 import androidx.compose.foundation.Text
 import androidx.compose.foundation.layout.*
 import androidx.compose.material.*
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.Alignment
+import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.setContent
 import androidx.compose.ui.res.colorResource
@@ -38,9 +41,12 @@ fun ProfilePreview() {
         Column {
             toolbar(title = stringResource(id = R.string.app_name))
 
-            coverHeader(name = stringResource(id = R.string.profile_name),stringResource(id = R.string.profile_name))
+            coverHeader(name = stringResource(id = R.string.profile_name),stringResource(id = R.string.function_name))
 
             aboutMe(desc = stringResource(id = R.string.desc_about))
+
+          //  bottomNavigation()
+
         }
     }
 }
@@ -51,6 +57,14 @@ fun toolbar(title:String){
         title = { Text(text = title,color = Color.White) },
         backgroundColor = colorResource(id = R.color.purple_200)
     )
+}
+
+@Composable
+fun bottomNavigation(){
+    BottomAppBar(backgroundColor = colorResource(id = R.color.purple_200)) {
+        Text(text = "Menu 1",color = Color.White,modifier = Modifier.padding(8.dp))
+        Text(text = "Menu 2",color = Color.White,modifier = Modifier.padding(8.dp))
+    }
 }
 
 @Composable
@@ -75,22 +89,33 @@ fun coverHeader(name:String,profileName:String){
 
 @Composable
 fun aboutMe(desc:String){
-    Card(modifier = androidx.compose.ui.Modifier.padding(start = 16.dp,end = 16.dp,bottom = 16.dp).fillMaxSize(),
+    Card(modifier = androidx.compose.ui.Modifier.padding(start = 16.dp,end = 16.dp,bottom = 16.dp).fillMaxWidth().preferredHeight(300.dp),
         elevation = 16.dp) {
 
-        ScrollableColumn {
+        Column {
             Text(
                 stringResource(id = R.string.title_about), style = TextStyle(fontWeight = FontWeight.Bold),
                 fontSize = 18.sp,
                 modifier = androidx.compose.ui.Modifier.padding(16.dp)
             )
 
-            Text(desc,style = TextStyle(fontWeight = FontWeight.Light),
-                modifier = androidx.compose.ui.Modifier.padding(start = 16.dp,end = 16.dp,bottom = 8.dp))
-        }
-    }
-    Spacer(modifier = androidx.compose.ui.Modifier.preferredSize(16.dp))
+            ScrollableColumn {
 
+                Text(
+                    desc, style = TextStyle(fontWeight = FontWeight.Light),
+                    modifier = androidx.compose.ui.Modifier.padding(
+                        start = 16.dp,
+                        end = 16.dp,
+                        bottom = 16.dp
+                    )
+                )
+            }
+
+            Text("")
+        }
+
+
+    }
 }
 
 
